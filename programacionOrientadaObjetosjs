@@ -1,0 +1,19 @@
+//Crea una clase llamada persona que tenga propiedades como nombre, edad y un método saludar () que imprima "Hola soy [nombre] y tengo [edad] años" en la consola. Luego crea varias instancias de esta clase con diferentes nombres y edades y llama al método saludar () en cada una de ellas. 
+
+//Definir la clase
+class Persona { 
+    constructor(nombre, edad) { //Definir constructor
+        this.nombre = nombre; //Definir propiedades
+        this.edad = edad; } 
+        saludar() { //Saludo
+            console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años.`); 
+        }
+     } 
+     // Crear instancias de la clase Persona 
+     const persona1 = new Persona("Juan", 25); 
+     const persona2 = new Persona("María", 30); 
+     const persona3 = new Persona("Carlos", 22); 
+     // Llamar al método saludar() en cada instancia
+     persona1.saludar(); 
+     persona2.saludar(); 
+     persona3.saludar();
