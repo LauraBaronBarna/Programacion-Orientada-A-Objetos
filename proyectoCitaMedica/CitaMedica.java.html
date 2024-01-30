@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>CitaMedica.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c792ea; font-style: italic;}
+.s1 { color: #c3cee3;}
+.s2 { color: #89ddff;}
+.s3 { color: #717cb4; font-style: italic;}
+.s4 { color: #c3e88d;}
+</style>
+</head>
+<body bgcolor="#0f111a">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CitaMedica.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Date</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">CitaMedica</span>
+<span class="s2">{</span>
+    <span class="s3">// Inicializar los atributos de la clase</span>
+    <span class="s0">private </span><span class="s1">String paciente</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">Date fecha</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String motivo</span><span class="s2">;</span>
+
+    <span class="s3">// Constructor de la clase</span>
+    <span class="s0">public </span><span class="s1">CitaMedica</span><span class="s2">(</span><span class="s1">String paciente</span><span class="s2">, </span><span class="s1">Date fecha</span><span class="s2">, </span><span class="s1">String motivo</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">paciente </span><span class="s2">= </span><span class="s1">paciente</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">fecha </span><span class="s2">= </span><span class="s1">fecha</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">motivo </span><span class="s2">= </span><span class="s1">motivo</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Método para obtener info de la cita medica</span>
+    <span class="s0">public </span><span class="s1">String obtenerInformacionCita</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s4">&quot;Paciente: &quot; </span><span class="s2">+ </span><span class="s1">paciente </span><span class="s2">+ </span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">Fecha: &quot; </span><span class="s2">+ </span><span class="s1">fecha </span><span class="s2">+ </span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">Motivo: &quot; </span><span class="s2">+ </span><span class="s1">motivo</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Método para crear una cita medica desde la consola</span>
+    <span class="s0">public static </span><span class="s1">CitaMedica crearCitaDesdeConsola</span><span class="s2">() </span><span class="s0">throws </span><span class="s1">ParseException</span>
+    <span class="s2">{</span>
+        <span class="s3">// Formato de fecha para la entrada del usuario</span>
+        <span class="s1">SimpleDateFormat dateFormat </span><span class="s2">= </span><span class="s0">new </span><span class="s1">SimpleDateFormat</span><span class="s2">(</span><span class="s4">&quot;dd/MM/yyyy HH:mm&quot;</span><span class="s2">);</span>
+        <span class="s3">// Solicitar el nombre del paciente</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Ingrese el nombre del paciente: &quot;</span><span class="s2">);</span>
+        <span class="s1">String paciente </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">).</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s3">//Solicitar la fecha de la cita</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Ingrese la fecha de la cita: (formato dd/MM/yyyy HH:mm)&quot;</span><span class="s2">);</span>
+        <span class="s1">Date fecha </span><span class="s2">= </span><span class="s1">dateFormat</span><span class="s2">.</span><span class="s1">parse</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">).</span><span class="s1">nextLine</span><span class="s2">());</span>
+
+        <span class="s3">//Solicitar el motivo de la cita</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Ingrese el motivo de la cita: &quot;</span><span class="s2">);</span>
+        <span class="s1">String motivo </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">).</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s3">//Crear y devolver una nueva instancia de CitaMedica con los datos proporcionados por el usuario</span>
+        <span class="s0">return new </span><span class="s1">CitaMedica</span><span class="s2">(</span><span class="s1">paciente</span><span class="s2">, </span><span class="s1">fecha</span><span class="s2">, </span><span class="s1">motivo</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

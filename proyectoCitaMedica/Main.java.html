@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c792ea; font-style: italic;}
+.s1 { color: #c3cee3;}
+.s2 { color: #89ddff;}
+.s3 { color: #717cb4; font-style: italic;}
+.s4 { color: #c3e88d;}
+</style>
+</head>
+<body bgcolor="#0f111a">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">ParseException</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Main</span>
+<span class="s2">{</span>
+    <span class="s3">/*Crear un programa que me permita crear citas medicas con su fecha, hora y motivo por el que solicita la cita*/</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">)</span>
+    <span class="s2">{</span>
+        <span class="s0">try</span><span class="s2">{</span>
+            <span class="s3">//Crear la cita médica desde consola</span>
+            <span class="s1">CitaMedica cita </span><span class="s2">= </span><span class="s1">CitaMedica</span><span class="s2">.</span><span class="s1">crearCitaDesdeConsola</span><span class="s2">();</span>
+            <span class="s3">//Mostrar la información de la cita medica</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Información de la cita medica es: </span><span class="s2">\n</span><span class="s4">&quot; </span><span class="s2">+ </span><span class="s1">cita</span><span class="s2">.</span><span class="s1">obtenerInformacionCita</span><span class="s2">());</span>
+        <span class="s2">} </span><span class="s0">catch </span><span class="s2">(</span><span class="s1">ParseException e</span><span class="s2">){</span>
+            <span class="s3">//Se usa para capturar y manejar los errores en caso de que el formato fecha se ingrese incorrectamente</span>
+            <span class="s1">e</span><span class="s2">.</span><span class="s1">printStackTrace</span><span class="s2">();</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
